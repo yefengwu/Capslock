@@ -45,6 +45,13 @@ Capslock & F7::Send "{Volume_Down}"
 Capslock & F8::Send "{Volume_Up}"
 ^Space::send "#{Space}"
 !w::send "^{F4}"
-!q::send "!{F4}"
 
 Capslock & w::send "^{w}"
+$!q::
+{
+    if WinActive("ahk_class TFoxMainFrm.UnicodeClass")
+      return
+    else
+      Send "!{F4}"
+}
+
